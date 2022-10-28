@@ -1,11 +1,12 @@
 import Image from "next/image";
-import React from "react";
 import image_1 from "../public/mic_guy.png";
+import arrow from "../public/arrow_up.png"
+import image_2 from '../public/green_guy.png'
 export default function HomeBanner() {
   return (
     <div className="flex flex-col md:flex-row">
       <div className="w-100 md:w-2/4 md:float-left">
-        <div className="border-4 border-emerald-700 m-0 p-6">
+        <div className="m-0 p-6">
           <p className="text-end text-c_navy font-inter font-bold text-xl md:text-2xl">
             React
           </p>
@@ -24,12 +25,21 @@ export default function HomeBanner() {
                 quam id fermentum..id fermentum. In quis diam turpis quam id
                 fermentum.
               </p>
+
+              <div className="flex justify-center md:justify-start">
+              <button className="bg-c_yellow w-64 p-2 rounded-3xl mt-8 items-center flex justify-center font-inter font-semibold ">
+                Buy Tickets
+                <Image src={arrow} alt="buy now button arrow" className="ml-2" height={16} width={16}/>
+              </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div className="w-100 md:w-2/4 md:float-left">
-        <div className="border-4 border-red-700  ">Right</div>
+        <div className="md:pt-64 md:pl-16">
+          <Image src={image_2} alt="green guy with laptop" />
+        </div>
       </div>
     </div>
   );
