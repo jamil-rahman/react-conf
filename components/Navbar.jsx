@@ -38,6 +38,13 @@ export default function Navbar() {
                   href="#"
                   className=" hover:bg-c_yellow hover:text-white px-3 py-2 rounded-md text-base font-inter"
                 >
+                  Our Work
+                </Link>
+
+                <Link
+                  href="#"
+                  className=" hover:bg-c_yellow hover:text-white px-3 py-2 rounded-md text-base font-inter"
+                >
                   Blog
                 </Link>
 
@@ -46,13 +53,6 @@ export default function Navbar() {
                   className=" hover:bg-c_yellow hover:text-white px-3 py-2 rounded-md text-base font-inter"
                 >
                   Say hi
-                </Link>
-
-                <Link
-                  href="#"
-                  className=" hover:bg-c_yellow hover:text-white px-3 py-2 rounded-md text-base font-inter"
-                >
-                  Reports
                 </Link>
               </div>
             </div>

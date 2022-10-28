@@ -1,7 +1,7 @@
 import Image from "next/image";
 import image_1 from "../public/mic_guy.png";
-import arrow from "../public/arrow_up.png"
-import image_2 from '../public/green_guy.png'
+import arrow from "../public/arrow_up.png";
+import image_2 from "../public/green_guy.png";
 export default function HomeBanner() {
   return (
     <div className="flex flex-col md:flex-row">
@@ -27,10 +27,16 @@ export default function HomeBanner() {
               </p>
 
               <div className="flex justify-center md:justify-start">
-              <button className="bg-c_yellow w-64 p-2 rounded-3xl mt-8 items-center flex justify-center font-inter font-semibold ">
-                Buy Tickets
-                <Image src={arrow} alt="buy now button arrow" className="ml-2" height={16} width={16}/>
-              </button>
+                <button className="bg-c_yellow w-64 p-2 rounded-3xl mt-8 items-center flex justify-center font-inter font-semibold ">
+                  Buy Tickets
+                  <Image
+                    src={arrow}
+                    alt="buy now button arrow"
+                    className="ml-2"
+                    height={16}
+                    width={16}
+                  />
+                </button>
               </div>
             </div>
           </div>
