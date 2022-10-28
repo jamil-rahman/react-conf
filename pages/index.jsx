@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import HomeBanner from '../components/HomeBanner'
+import Navbar from '../components/Navbar'
 
 export default function Home() {
   return (
@@ -9,6 +11,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+    
+    <Navbar />
+    <HomeBanner />
      <h1 className='font-inter text-red-500 text-2xl font-bold'>Hi, this is a test</h1>
      <h2 className='text-c_yellow text-xl font-semibold'>this is not a test</h2>
      <h3 className='text-blue-500 text-sm font-medium'>this is not a test</h3>
