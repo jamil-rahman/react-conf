@@ -5,6 +5,7 @@ const colors = {
   c_yellow: "#FFC93E",
   c_brown: "#725114",
   c_blue: "#111D5E",
+  c_navy: "#0A142F"
 };
 
 module.exports = {
