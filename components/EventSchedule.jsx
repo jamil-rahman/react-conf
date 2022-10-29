@@ -9,7 +9,7 @@ const styles = {
     height: "60vh",
     margin: "2em",
   },
-};
+}; 
 export default function EventSchedule() {
   const events = [
     {

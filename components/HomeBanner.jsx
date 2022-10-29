@@ -16,7 +16,7 @@ export default function HomeBanner() {
 
           <div className="flex flex-col md:flex-row">
             <div className="md:float-left flex justify-center items-center md:w-1/2">
-              <Image src={image_1} alt="guy with mic" sizes="100vw" />
+              <Image src={image_1} alt="guy with mic" sizes="100vw" priority />
             </div>
 
             <div className="mt-4  md:w-1/2 md:float-right">
@@ -44,7 +44,7 @@ export default function HomeBanner() {
       </div>
       <div className="w-100 md:w-2/4 md:float-left">
         <div className="md:pt-64 md:pl-16">
-          <Image src={image_2} alt="green guy with laptop" />
+          <Image src={image_2} alt="green guy with laptop" priority />
         </div>
       </div>
     </div>
