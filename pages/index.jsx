@@ -2,9 +2,11 @@ import Head from "next/head";
 import ConferenceHeader from "../components/ConferenceHeader";
 import EventSchedule from "../components/EventSchedule";
 import HomeBanner from "../components/HomeBanner";
+import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 
 
-export default function Home() {
+export default function Home({events}) {
+  console.log("my events", events);
   return (
     <div>
       <Head>
@@ -15,7 +17,67 @@ export default function Home() {
 
       <HomeBanner />
       <ConferenceHeader title="Event Schedule" content="Lorem uis diam turpis quam id fermentum.In quis diam turpis quam id fermentum."/>
-      <EventSchedule />
+      <EventSchedule events={events}/>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const client = new ApolloClient({
+    uri: "https://api.react-finland.fi/graphql",
+    cache: new InMemoryCache(),
+  });
+
+  const { data } = await client.query({
+    query: gql`
+      query getConferences {
+        conferences {
+          id
+          name
+          startDate
+          endDate
+          organizer {
+            name
+            company
+            aboutShort
+            image {
+              url
+            }
+          }
+          speakers {
+            name
+            aboutShort
+            company
+            image {
+              url
+            }
+          }
+          locations {
+            name
+            image {
+              url
+            }
+          }
+          schedules {
+            day
+            description
+          }
+          sponsors {
+            name
+            image {
+              url
+            }
+            company
+            aboutShort
+          }
+        }
+      }
+    `,
+  });
+
+  return {
+    props: {
+      events: data.conferences,
+    },
+  };
 }
