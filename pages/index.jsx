@@ -1,7 +1,8 @@
 import Head from "next/head";
+import ConferenceHeader from "../components/ConferenceHeader";
 import EventSchedule from "../components/EventSchedule";
 import HomeBanner from "../components/HomeBanner";
-import Navbar from "../components/Navbar";
+
 
 export default function Home() {
   return (
@@ -13,11 +14,8 @@ export default function Home() {
       </Head>
 
       <HomeBanner />
+      <ConferenceHeader title="Event Schedule" content="Lorem uis diam turpis quam id fermentum.In quis diam turpis quam id fermentum."/>
       <EventSchedule />
-      <h2 className="text-c_yellow text-xl font-semibold">
-        this is not a test
-      </h2>
-      <h3 className="text-blue-500 text-sm font-medium">this is not a test</h3>
     </div>
   );
 }
