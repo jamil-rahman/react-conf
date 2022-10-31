@@ -1,6 +1,7 @@
 import React from "react";
 import ConferenceHeader from "../../components/ConferenceHeader";
 import { ApolloClient, InMemoryCache, gql, client } from "@apollo/client";
+import ConferenceInfo from "../../components/ConferenceInfo";
 
 export const getStaticPaths = async () => {
   const client = new ApolloClient({
@@ -96,7 +97,7 @@ export default function ConferenceDetail({ conference }) {
         content="Lorem uis diam turpis quam id fermentum.In quis diam turpis quam id fermentum."
       />
 
-      <div className="pt-6">List</div>
+      <ConferenceInfo conference={conference} />
     </div>
   );
 }

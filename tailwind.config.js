@@ -7,11 +7,13 @@ const colors = {
   c_blue: "#111D5E",
   c_navy: "#0A142F",
   c_gray: "rgba(10, 20, 47, 0.8)",
+  c_border: "rgba(217, 217, 217, 0.5)",
+  c_white: "rgba(251, 251, 251, 1)",
   c_background: "rgb(255,252,246)",
   c_brown: {
-  "100":  "rgba(114, 81, 20, 1)",
-    "200": "rgba(139, 111, 59, 1)",  
-},
+    100: "rgba(114, 81, 20, 1)",
+    200: "rgba(139, 111, 59, 1)",
+  },
 };
 
 module.exports = {
@@ -22,14 +24,13 @@ module.exports = {
   theme: {
     extend: {
       colors: colors,
-      fontSize:{
-        'sm': '12px',
-        'base': '16px',
-        'lg': '20px',
-        'xl': '48px',
-        '2xl': '140px',
-      }
-      
+      fontSize: {
+        sm: "12px",
+        base: "16px",
+        lg: "20px",
+        xl: "48px",
+        "2xl": "140px",
+      },
     },
     fontFamily: {
       inter: ["Inter", "sans-serif"],
@@ -37,4 +38,3 @@ module.exports = {
   },
   plugins: [],
 };
-

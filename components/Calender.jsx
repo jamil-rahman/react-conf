@@ -76,19 +76,19 @@ export default function Calender({ events }) {
             <td className="pt-px pb-px border-2 border-b-gray-300 text-center overflow-x-auto"></td>
             <td className="pt-px pb-px border-2 border-b-gray-300 text-center overflow-x-auto">
               <CalenderItem
-                title={events[2].name}
-                id={events[2].id}
+                title={events[0].name}
+                id={events[0].id}
                 time="7:00-9:00"
-                date={events[2].startDate}
+                date={events[0].startDate}
               />
             </td>
             <td className="pt-px pb-px border-2 border-b-gray-300 text-center overflow-x-auto"></td>
             <td className="pt-px pb-px border-2 border-b-gray-300 text-center overflow-x-auto">
               <CalenderItem
-                title={events[8].name}
-                id={events[8].id}
+                title={events[10].name}
+                id={events[10].id}
                 time="16:00-18:00"
-                date={events[8].startDate}
+                date={events[10].startDate}
               />
             </td>
             <td className="pt-px pb-px border-2 border-b-gray-300 text-center overflow-x-auto"></td>
