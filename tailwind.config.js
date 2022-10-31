@@ -7,6 +7,11 @@ const colors = {
   c_blue: "#111D5E",
   c_navy: "#0A142F",
   c_gray: "rgba(10, 20, 47, 0.8)",
+  c_background: "rgb(255,252,246)",
+  c_brown: {
+  "100":  "rgba(114, 81, 20, 1)",
+    "200": "rgba(139, 111, 59, 1)",  
+},
 };
 
 module.exports = {

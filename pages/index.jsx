@@ -1,12 +1,11 @@
 import Head from "next/head";
 import ConferenceHeader from "../components/ConferenceHeader";
-import EventSchedule from "../components/EventSchedule";
 import HomeBanner from "../components/HomeBanner";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import Calender from "../components/Calender";
 
 
 export default function Home({events}) {
-  console.log("my events", events);
   return (
     <div>
       <Head>
@@ -17,7 +16,7 @@ export default function Home({events}) {
 
       <HomeBanner />
       <ConferenceHeader title="Event Schedule" content="Lorem uis diam turpis quam id fermentum.In quis diam turpis quam id fermentum."/>
-      <EventSchedule events={events}/>
+      <Calender events={events} />
     </div>
   );
 }

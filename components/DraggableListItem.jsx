@@ -1,7 +1,11 @@
+
 import React from 'react'
 
-export default function DraggableListItem() {
+
+export default function DraggableListItem({primary}) {
   return (
-    <div>DraggableListItem</div>
+    <div>
+     
+    </div>
   )
 }
