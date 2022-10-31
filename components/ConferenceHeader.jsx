@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ConferenceHeader({title, content}) {
+export default function ConferenceHeader({ title, content }) {
   return (
     <div className="w-100 pt-10 pl-14 flex flex-col">
       <div>
@@ -9,9 +9,7 @@ export default function ConferenceHeader({title, content}) {
         </p>
       </div>
       <div className="pt-3">
-        <p className="font-inter font-normal text-c_gray">
-          {content}
-        </p>
+        <p className="font-inter font-normal text-c_gray">{content}</p>
       </div>
     </div>
   );

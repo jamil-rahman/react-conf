@@ -4,8 +4,7 @@ import HomeBanner from "../components/HomeBanner";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import Calender from "../components/Calender";
 
-
-export default function Home({events}) {
+export default function Home({ events }) {
   return (
     <div>
       <Head>
@@ -15,7 +14,10 @@ export default function Home({events}) {
       </Head>
 
       <HomeBanner />
-      <ConferenceHeader title="Event Schedule" content="Lorem uis diam turpis quam id fermentum.In quis diam turpis quam id fermentum."/>
+      <ConferenceHeader
+        title="Event Schedule"
+        content="Lorem uis diam turpis quam id fermentum.In quis diam turpis quam id fermentum."
+      />
       <Calender events={events} />
     </div>
   );
@@ -34,41 +36,6 @@ export async function getStaticProps() {
           id
           name
           startDate
-          endDate
-          organizer {
-            name
-            company
-            aboutShort
-            image {
-              url
-            }
-          }
-          speakers {
-            name
-            aboutShort
-            company
-            image {
-              url
-            }
-          }
-          locations {
-            name
-            image {
-              url
-            }
-          }
-          schedules {
-            day
-            description
-          }
-          sponsors {
-            name
-            image {
-              url
-            }
-            company
-            aboutShort
-          }
         }
       }
     `,
