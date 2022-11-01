@@ -1,85 +1,92 @@
+import {
+  DragDropContext,
+  Draggable,
+  Droppable,
+  resetServerContext,
+} from "react-beautiful-dnd";
 import Image from "next/image";
 import React, { useState } from "react";
 import swap from "../public/swap.png";
 import Card from "./Card";
 
+const menuItems = [
+  {
+    id: "organizer",
+    name: "Organizer",
+  },
+  {
+    id: "speaker",
+    name: "Speakers",
+  },
+  {
+    id: "location",
+    name: "Location",
+  },
+  {
+    id: "schedule",
+    name: "Schedule",
+  },
+  {
+    id: "sponsor",
+    name: "Sponsors",
+  },
+];
+
+resetServerContext();
+
 export default function ConferenceInfo({ conference }) {
-  const [show, setShow] = useState(false);
-  console.log(conference.speakers);
+  const [show, setShow] = useState(true);
+  const [options, setOptions] = useState(menuItems);
+
+  function handleOnDragEnd(result) {
+    if (!result.destination) return;
+
+    const items = Array.from(options);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+
+    setOptions(items);
+  }
+  // console.log(conference.speakers);
   return (
     <div className="pt-6 w-full h-full flex flex-col justify-around md:flex-row">
       {/* SideMenuBar */}
-      <div className="border-4 w-full flex h-3/4 flex-col justify-center text-center md:w-1/3">
-        <ul>
-          <li key={conference.organizer.name} className="m-6">
-            <div className="border border-c_border w-full flex p-4 rounded-lg hover:bg-c_yellow hover:text-white hover:cursor-pointer">
-              <div className="p-4 bg-white rounded-lg ">
-                <Image src={swap} alt="menuIcon" />
-              </div>
-              <div>
-                <p className="font-inter text-lg font-bold px-10 pt-4">
-                  Organizer
-                </p>
-              </div>
-            </div>
-          </li>
-
-          <li
-            key={conference.speakers.name}
-            className="m-6"
-            onClick={() => setShow(!show)}
-          >
-            <div className="border border-c_border w-full flex p-4 rounded-lg hover:bg-c_yellow hover:text-white hover:cursor-pointer">
-              <div className="p-4 bg-white rounded-lg ">
-                <Image src={swap} alt="menuIcon" />
-              </div>
-              <div>
-                <p className="font-inter text-lg font-bold px-10 pt-4">
-                  Speakers
-                </p>
-              </div>
-            </div>
-          </li>
-
-          <li key={conference.locations.name} className="m-6">
-            <div className="border border-c_border w-full flex p-4 rounded-lg hover:bg-c_yellow hover:text-white hover:cursor-pointer">
-              <div className="p-4 bg-white rounded-lg ">
-                <Image src={swap} alt="menuIcon" />
-              </div>
-              <div>
-                <p className="font-inter text-lg font-bold px-10 pt-4">
-                  Location
-                </p>
-              </div>
-            </div>
-          </li>
-
-          <li key={conference.schedules.day} className="m-6">
-            <div className="border border-c_border w-full flex p-4 rounded-lg hover:bg-c_yellow hover:text-white hover:cursor-pointer">
-              <div className="p-4 bg-white rounded-lg ">
-                <Image src={swap} alt="menuIcon" />
-              </div>
-              <div>
-                <p className="font-inter text-lg font-bold px-10 pt-4">
-                  Schedule
-                </p>
-              </div>
-            </div>
-          </li>
-
-          <li key={conference.sponsors.name} className="m-6">
-            <div className="border border-c_border w-full flex p-4 rounded-lg hover:bg-c_yellow hover:text-white hover:cursor-pointer">
-              <div className="p-4 bg-white rounded-lg ">
-                <Image src={swap} alt="menuIcon" />
-              </div>
-              <div>
-                <p className="font-inter text-lg font-bold px-10 pt-4">
-                  Sponsors
-                </p>
-              </div>
-            </div>
-          </li>
-        </ul>
+      <div className=" w-full flex h-3/4 flex-col justify-center text-center md:w-1/3">
+        <DragDropContext onDragEnd={handleOnDragEnd}>
+          <Droppable droppableId="menu items">
+            {(provided) => (
+              <ul {...provided.droppableProps} ref={provided.innerRef}>
+                {options.map(({ id, name }, index) => {
+                  return (
+                    <Draggable key={id} draggableId={id} index={index}>
+                      {(provided) => (
+                        <li
+                          key={name}
+                          className="m-6"
+                          ref={provided.innerRef}
+                          {...provided.draggableProps}
+                          {...provided.dragHandleProps}
+                        >
+                          <div className="border border-c_border w-full flex p-4 rounded-lg hover:bg-c_yellow hover:text-white">
+                            <div className="p-4 bg-white rounded-lg ">
+                              <Image src={swap} alt="menuIcon" />
+                            </div>
+                            <div>
+                              <p className="font-inter text-lg font-bold px-10 pt-4">
+                                {name}
+                              </p>
+                            </div>
+                          </div>
+                        </li>
+                      )}
+                    </Draggable>
+                  );
+                })}
+                {provided.placeholder}
+              </ul>
+            )}
+          </Droppable>
+        </DragDropContext>
       </div>
 
       {/* Info Tab */}

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ConferenceHeader({ title, content }) {
   return (
-    <div className="w-100 pt-10 pl-14 flex flex-col">
+    <div className="w-100 pt-10 mt-8 md:pl-20 mx-5 flex flex-col">
       <div>
         <p className="text-c_navy font-inter font-bold text-lg md:text-xl">
           {title}
