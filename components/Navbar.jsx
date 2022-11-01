@@ -7,17 +7,19 @@ import Link from "next/link";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav>
+    <nav data-testid='navbar'>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             {/* Logo */}
-            <Image
-              src={logo}
-              alt="React Conf Logo"
-              className="flex-shrink-0 items-start -pl-36 flex"
-            />
-
+            <Link href="/">
+              <Image
+                src={logo}
+                alt="React Conf Logo"
+                className="flex-shrink-0 items-start -pl-36 flex"
+                data-testid="homepageLogo"
+              />
+            </Link>
             <div className="hidden md:block">
               <div className="ml-36 flex items-center justify-center space-x-16">
                 <Link

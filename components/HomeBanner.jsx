@@ -4,7 +4,7 @@ import arrow from "../public/arrow_up.png";
 import image_2 from "../public/green_guy.png";
 export default function HomeBanner() {
   return (
-    <div className="flex flex-col md:flex-row">
+    <div className="flex flex-col md:flex-row" data-testid="homebanner">
       <div className="w-100 md:w-2/4 md:float-left">
         <div className="m-0 p-6">
           <p className="text-end text-c_navy font-inter font-bold text-xl md:text-2xl">

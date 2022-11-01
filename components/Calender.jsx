@@ -3,7 +3,7 @@ import CalenderItem from "./CalenderItem";
 
 export default function Calender({ events }) {
   return (
-    <div className="w-full h-full mt-5 p-2 overflow-x-auto scroll-smooth ">
+    <div className="w-full h-full mt-5 p-2 overflow-x-auto scroll-smooth" data-testid="calender">
       <table className="border-2 border-gray-300 w-full table-auto border-collapse md:table-fixed ">
         <tbody>
           <tr className="border-b-2 border-b-gray-300 text-center">

@@ -1,34 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# REACT CONFERENCE
 
-## Getting Started
+Fully responsive Landing page for React Conference with an Event Schedule. Each event link leads to a dynamic route with the event details and contains a Drag-n-drop swappable Side-bar Menu. Powered with [NextJs](https://nextjs.org/) and styled with [Tailwind CSS](https://tailwindcss.com/)
 
-First, run the development server:
+## SCREENSHOTS
 
+<a href="url"><img src="https://cdn.discordapp.com/attachments/948296207070019594/1036888724425940992/unknown.png" height="480" width="1000" ></a>
+<a href="url"><img src="https://cdn.discordapp.com/attachments/948296207070019594/1036888899999518740/unknown.png" height="480" width="1000" ></a>
+
+## TECH USED
+* NextJS
+* GraphQL
+
+## SET UP
+
+### Make sure you have at least Node.js v12.22 installed. 
+
+If you do not have it installed, you can download the lastest version of Node.js from [here](https://nodejs.org/en/)
+
+### 1. Clone the Repository
+Next, you have to clone the repository onto your machine using the following terminal command:
+```bash
+git clone https://github.com/jamil-rahman/react-conf.git
+```
+
+### 2. Install dependacies
+Now, you need to install all the required dependancies for this app. Go to the client folder using the command:
+```bash
+cd client
+```
+Now use the following command in your terminal:
+```bash
+npm install
+```
+or if you are using yarn, then: 
+```bash
+yarn add
+```
+
+### 3. Run the app
+Now, you can test the app using the following command:
 ```bash
 npm run dev
-# or
+```
+or if you are using yarn, then: 
+```bash
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## CONTACT
+Jamilur Rahman - [r.jamilur96@gmail.com](r.jamilur96@gmail.com) <br>
+[LinkedIn](https://www.linkedin.com/in/jamilurrahman96/) <br>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## ATTRIBUTION
+[Lemon Hive](https://www.lemonhive.com/) for giving me the opportunity to work on this
+[Atlassian](https://github.com/atlassian/react-beautiful-dnd) for the amazing Drag-n-Drop library
